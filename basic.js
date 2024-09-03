@@ -15,6 +15,13 @@ function FindProxyForURL(url, host) {
 	
 	if (/^127\.0\.0\.1$/.test(host) || /^::1$/.test(host) || /^localhost$/.test(host)) return "DIRECT";
 	
-	if (isResolvable("192.168.1.42:8086")) return "SOCKS5 192.168.1.42:8086";
-  	else {return "SOCKS5 localhost:9050, SOCKS localhost:9050";}
+	if (isResolvable("192.168.1.42:8086"))
+	{
+		conosle.log("phone was reachable");
+		return "SOCKS5 192.168.1.42:8086";
+	}
+  	else {
+		console.log("phone was not reachable");
+		return "SOCKS5 localhost:9050, SOCKS localhost:9050";
+	}
 }
