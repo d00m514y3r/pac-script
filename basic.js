@@ -17,11 +17,11 @@ function FindProxyForURL(url, host) {
 	
 	if (isResolvable("192.168.1.42:8086"))
 	{
-		conosle.log("phone was reachable");
+		alert("phone was reachable");
 		return "SOCKS5 192.168.1.42:8086";
 	}
   	else {
-		console.log("phone was not reachable");
+		alert("phone was not reachable");
 		return "SOCKS5 localhost:9050, SOCKS localhost:9050";
 	}
 }
